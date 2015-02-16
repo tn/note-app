@@ -1,0 +1,28 @@
+html(lang='en')
+  head
+    title Note App
+    link(rel='stylesheet' href='app.css')
+
+  body(ng-app='noteApp')
+    .page
+      include layout/header
+
+      main(ui-view='')
+        p.loader Loading..
+
+      .footer-push
+
+    include layout/footer
+
+    script(src='vendor/angular/angular.js')
+    script(src='vendor/angular-ui-router/release/angular-ui-router.js')
+    script(src='vendor/angular-local-storage/dist/angular-local-storage.js')
+    script(src='vendor/angular-truncate/src/truncate.js')
+    script(src='vendor/moment/moment.js')
+    script(src='app.module.js')
+    script(src='app.routes.js')
+    script(src='app.config.js')
+    script(src='services/notes.service.js')
+    script(src='notes/notes.controller.js')
+    script(src='notes/note-detail.controller.js')
+    script(src='notes/note-form.controller.js')

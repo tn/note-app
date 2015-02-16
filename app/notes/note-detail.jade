@@ -1,0 +1,16 @@
+article.note-detail(ng-repeat='note in note.note')
+  header.note-detail-header
+    h1(ng-bind='note.title')
+
+  .note-detail-body(ng-bind='note.text')
+
+  footer.note-detail-footer
+    a.edit(ui-sref='note-edit({ noteId: {{note.created_at}} })')
+      i.fa.fa-pencil
+    a.remove(ng-click='' href='#')
+      i.fa.fa-trash
+
+  .back
+    a(ui-sref='notes')
+      i.fa.fa-arrow-left
+      | &nbsp;Back to notes

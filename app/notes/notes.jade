@@ -1,0 +1,18 @@
+include search
+
+section.notes
+  article.note(ng-repeat='note in notes.notes | filter:search')
+    .note-wrap
+      a(ui-sref='note-detail({ noteId: {{note.created_at}} })').show
+        i.fa.fa-link
+      header.note-header
+        h1(ng-bind='note.title')
+
+      .note-body {{ note.text | characters:180: false }}
+
+      footer.note-footer
+        time(ng-bind='notes.formatDate(note.created_at)')
+      .note-actions
+        a.copy(ui-sref='copy({ copiedId: {{note.created_at}} })'): i.fa.fa-copy
+        a.edit(ui-sref='note-edit({ noteId: {{note.created_at}} })'): i.fa.fa-pencil
+        a.remove(ng-click='notes.removeNote(note.created_at)' href='#'): i.fa.fa-trash

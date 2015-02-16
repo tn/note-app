@@ -1,0 +1,56 @@
+.btn {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  text-decoration: none;
+  margin: 0;
+  cursor: pointer;
+  font-family: $baseFont, sans-serif;
+}
+
+.ghost-btn {
+  display: inline-block;
+  line-height: normal;
+  padding: 1rem 1.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $color5;
+  border: 2px solid;
+  border-radius: 100rem;
+  transition: all .1s linear;
+
+  &.inverse {
+    color: $color2;
+
+    &:hover {
+      color: $color5;
+      border-color: $color2;
+      background: $color2;
+    }
+  }
+
+  &.large {
+    padding: 1.6rem 3.6rem;
+    font-size: 1.8rem;
+  }
+
+  &:hover {
+    color: $color3;
+    background: $color5;
+    border-color: $color5;
+  }
+}
+
+.back {
+  padding: 3.6rem 0;
+  font-size: 1.8rem;
+
+  a {
+    display: block;
+    padding: 1.4rem 3.6rem;
+    color: $color3;
+    text-align: center;
+    text-decoration: none;
+    background: rgba($color2, .05);
+  }
+}

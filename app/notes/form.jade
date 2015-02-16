@@ -1,0 +1,15 @@
+div(ng-repeat='note in form.note')
+  form.note-form(action='')
+    h1.form-title Add new note
+    .input-group
+      input(type='text' placeholder='Type a title' autofocus ng-model='note.title')
+    .input-group
+      textarea(placeholder='Type a text' ng-model='note.text')
+    .actions
+      input(ng-click='form.save(note)' type='button' value='Save')
+      a(ui-sref='notes') Cancel
+
+  section.preview
+    header.preview-header
+      h1.form-title(ng-bind='note.title')
+      p.preview-text(ng-bind='note.text')

@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  height: $headerHeight;
+  background: $headerBg;
+
+  nav {
+    height: 100%;
+    padding: 0 1.8rem;
+    vertical-align: middle;
+  }
+
+  .logo {
+    display: block;
+    float: left;
+    padding: 0 1.8rem;
+    font-size: 1.4rem;
+    line-height: $headerHeight;
+    text-decoration: none;
+    color: $color5;
+    font-size: 3.6rem;
+    font-family: $secondFont, sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    margin: 2.8rem 1.8rem 0 1.8rem;
+    float: right;
+  }
+}

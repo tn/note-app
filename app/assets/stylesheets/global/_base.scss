@@ -1,0 +1,38 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body * {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+html, body, .page { min-height: 100%; }
+
+html { font-size: 62.5%; }
+
+body {
+  margin: 0;
+  background: $color5;
+  font-size: 100%;
+  font-family: $baseFont, sans-serif;
+  cursor: default;
+}
+
+main {
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after { clear: both; }
+}
+
+.loader {
+  text-align: center;
+  font-size: 3.6rem;
+  color: $color3;
+}
