@@ -29,7 +29,7 @@ angular
       .state 'note-detail',
         url: '/note/:noteId'
         templateUrl: 'notes/note-detail.html'
-        controller: 'NoteDetailController as note'
+        controller: 'NoteDetailController as noteDetail'
 
       .state 'note-edit',
         url: '/note/:noteId/edit'
