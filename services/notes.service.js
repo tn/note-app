@@ -14,7 +14,7 @@
         };
 
         NotesService.prototype.getNotes = function() {
-          var keys, _this;
+          var _this, keys;
           this.clearResponse();
           keys = this.getKeys();
           _this = this;
