@@ -1,6 +1,17 @@
 include search
 
 section.notes
+  article.note.empty-note(ng-if='notes.isEmpty')
+    .note-wrap
+      a(ui-sref='new').show
+        i.fa.fa-plus
+      header.note-header
+        h1 You don't have any note!
+
+      .note-body Try to add
+
+      footer.note-footer
+
   article.note(ng-repeat='note in notes.notes | filter:search')
     .note-wrap
       a(ui-sref='note-detail({ noteId: {{note.created_at}} })').show

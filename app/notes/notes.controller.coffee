@@ -6,10 +6,13 @@ angular
       @api = NotesService
       @state = $state
       @marked = marked
+      @isEmpty = false
       @getNotes()
 
     getNotes: ->
       @notes = @api.getNotes()
+
+      @isEmpty = true if @notes.length is 0
 
     formatDate: (date) ->
       moment(date).fromNow()
