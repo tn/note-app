@@ -6,11 +6,15 @@
       this.api = NotesService;
       this.state = $state;
       this.marked = marked;
+      this.isEmpty = false;
       this.getNotes();
     }
 
     NotesController.prototype.getNotes = function() {
-      return this.notes = this.api.getNotes();
+      this.notes = this.api.getNotes();
+      if (this.notes.length === 0) {
+        return this.isEmpty = true;
+      }
     };
 
     NotesController.prototype.formatDate = function(date) {
