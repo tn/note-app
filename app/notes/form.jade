@@ -12,4 +12,4 @@ div(ng-repeat='note in form.note')
   section.preview
     header.preview-header
       h1.form-title(ng-bind='note.title')
-      p.preview-text(ng-bind='note.text')
+    marked.preview-text(ng-bind-html='form.markdown(note.text)')

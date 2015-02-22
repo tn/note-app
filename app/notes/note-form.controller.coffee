@@ -2,8 +2,9 @@ angular
   .module 'noteApp'
   .controller 'NoteFormController', class NoteFormController
 
-    constructor: (NotesService, $state, $stateParams) ->
+    constructor: (NotesService, $state, $stateParams, marked) ->
       @api = NotesService
+      @marked = marked
       @state = $state
       @noteId = $stateParams.noteId or false
       @copiedId = $stateParams.copiedId or false
@@ -25,3 +26,6 @@ angular
 
     getNoteForEdit: ->
       @api.getNoteById(@noteId or @copiedId)
+
+    markdown: (text) ->
+      @marked text

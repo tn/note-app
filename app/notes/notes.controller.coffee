@@ -2,9 +2,10 @@ angular
   .module 'noteApp'
   .controller 'NotesController', class NotesController
 
-    constructor: (NotesService, $state) ->
+    constructor: (NotesService, $state, marked) ->
       @api = NotesService
       @state = $state
+      @marked = marked
       @getNotes()
 
     getNotes: ->
@@ -21,3 +22,6 @@ angular
 
     reload: ->
       @state.reload()
+
+    markdown: (text) ->
+      @marked text

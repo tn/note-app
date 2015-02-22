@@ -2,8 +2,9 @@ angular
   .module 'noteApp'
   .controller 'NoteDetailController', class NoteDetailController
 
-    constructor: (NotesService, $stateParams, $state) ->
+    constructor: (NotesService, $stateParams, $state, marked) ->
       @note = []
+      @marked = marked
       @api = NotesService
       @params = $stateParams
       @state = $state
@@ -17,5 +18,8 @@ angular
         @api.removeNote(id)
 
         @state.transitionTo('notes')
+
+    markdown: (text) ->
+      @marked text
 
 

@@ -5,4 +5,5 @@ angular
     'ui.router'
     'LocalStorageModule'
     'truncate'
+    'hc.marked'
   ]
