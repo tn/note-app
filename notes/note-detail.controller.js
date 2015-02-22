@@ -2,8 +2,9 @@
   var NoteDetailController;
 
   angular.module('noteApp').controller('NoteDetailController', NoteDetailController = (function() {
-    function NoteDetailController(NotesService, $stateParams, $state) {
+    function NoteDetailController(NotesService, $stateParams, $state, marked) {
       this.note = [];
+      this.marked = marked;
       this.api = NotesService;
       this.params = $stateParams;
       this.state = $state;
@@ -19,6 +20,10 @@
         this.api.removeNote(id);
         return this.state.transitionTo('notes');
       }
+    };
+
+    NoteDetailController.prototype.markdown = function(text) {
+      return this.marked(text);
     };
 
     return NoteDetailController;

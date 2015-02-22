@@ -2,9 +2,10 @@
   var NotesController;
 
   angular.module('noteApp').controller('NotesController', NotesController = (function() {
-    function NotesController(NotesService, $state) {
+    function NotesController(NotesService, $state, marked) {
       this.api = NotesService;
       this.state = $state;
+      this.marked = marked;
       this.getNotes();
     }
 
@@ -25,6 +26,10 @@
 
     NotesController.prototype.reload = function() {
       return this.state.reload();
+    };
+
+    NotesController.prototype.markdown = function(text) {
+      return this.marked(text);
     };
 
     return NotesController;

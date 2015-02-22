@@ -2,8 +2,9 @@
   var NoteFormController;
 
   angular.module('noteApp').controller('NoteFormController', NoteFormController = (function() {
-    function NoteFormController(NotesService, $state, $stateParams) {
+    function NoteFormController(NotesService, $state, $stateParams, marked) {
       this.api = NotesService;
+      this.marked = marked;
       this.state = $state;
       this.noteId = $stateParams.noteId || false;
       this.copiedId = $stateParams.copiedId || false;
@@ -32,6 +33,10 @@
 
     NoteFormController.prototype.getNoteForEdit = function() {
       return this.api.getNoteById(this.noteId || this.copiedId);
+    };
+
+    NoteFormController.prototype.markdown = function(text) {
+      return this.marked(text);
     };
 
     return NoteFormController;
