@@ -1,4 +1,6 @@
-include search
+form.search(action='' ng-if='!notes.isEmpty')
+  input(type='search' placeholder='Type for search...' ng-model='notes.search' autofocus)
+
 
 section.notes
   article.note.empty-note(ng-if='notes.isEmpty')
@@ -12,14 +14,14 @@ section.notes
 
       footer.note-footer
 
-  article.note(ng-repeat='note in notes.notes | filter:search')
+  article.note(ng-repeat='note in notes.notes | filter:notes.search')
     .note-wrap
       a(ui-sref='note-detail({ noteId: {{note.created_at}} })').show
         i.fa.fa-link
       header.note-header
         h1(ng-bind='note.title')
 
-      .note-body(ng-bind-html='notes.markdown(note.text) | characters:180: false')
+      .note-body(ng-bind-html='notes.markdown(note.text)')
 
       footer.note-footer
         time(ng-bind='notes.formatDate(note.created_at)')
