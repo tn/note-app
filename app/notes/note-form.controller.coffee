@@ -19,10 +19,7 @@ angular
 
         @api.saveNote(data, id)
 
-      if @noteId
-        @state.transitionTo('note-detail', { noteId: @noteId })
-      else
-        @state.transitionTo('note-detail', { noteId: id })
+      @state.transitionTo('notes')
 
     getNoteForEdit: ->
       @api.getNoteById(@noteId or @copiedId)
