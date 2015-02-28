@@ -5,9 +5,9 @@ article.note-detail(ng-repeat='note in noteDetail.note')
   .note-detail-body(ng-bind-html='noteDetail.markdown(note.text)')
 
   footer.note-detail-footer
-    a.edit(ui-sref='note-edit({ noteId: {{note.created_at}} })')
+    a.edit(ui-sref='note-edit({ noteId: {{note.created_at}} })' title='Edit note')
       i.fa.fa-pencil
-    a.remove(ng-click='noteDetail.removeNote(note.created_at)' href='#'): i.fa.fa-trash
+    a.remove(ng-click='noteDetail.removeNote(note.created_at)' href='#' title='Remove note'): i.fa.fa-trash
 
   .back
     a(ui-sref='notes')

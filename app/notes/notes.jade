@@ -24,6 +24,6 @@ section.notes
       footer.note-footer
         time(ng-bind='notes.formatDate(note.created_at)')
       .note-actions
-        a.copy(ui-sref='copy({ copiedId: {{note.created_at}} })'): i.fa.fa-copy
-        a.edit(ui-sref='note-edit({ noteId: {{note.created_at}} })'): i.fa.fa-pencil
-        a.remove(ng-click='notes.removeNote(note.created_at)' href='#'): i.fa.fa-trash
+        a.copy(ui-sref='copy({ copiedId: {{note.created_at}} })' title='Copy note'): i.fa.fa-copy
+        a.edit(ui-sref='note-edit({ noteId: {{note.created_at}} })' title='Edit note'): i.fa.fa-pencil
+        a.remove(ng-click='notes.removeNote(note.created_at)' href='#' title='Remove note'): i.fa.fa-trash
